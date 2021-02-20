@@ -3,8 +3,11 @@
 usando el bucle while
 """
 
-
-
+naturales = []
+n = 1
+while n < 101:
+    naturales.append(n)
+    n += 1
 
 """Guarde en `acumulado` una lista con el siguiente patrón:
 
@@ -13,16 +16,26 @@ usando el bucle while
 Hasta el número 50.
 """
 
-
-
+acumulado = []
+n = 1
+VarAgregar = ""
+while n < 51:
+    if n==1:
+      VarAgregar = str(n)
+    else:
+      VarAgregar = VarAgregar + " " + str(n)
+    acumulado.append(VarAgregar)
+    n += 1
 
 """Guarde en `suma100` el entero de la suma de todos los números entre 1 y 100:
 """
 
-
-
-
-
+suma100 = 0 
+n = 1
+VarAgregar = ""
+while n < 101:
+  suma100 = suma100 + n
+  n += 1
 
 """Guarde en `tabla100` un string con los primeros 10 múltiplos del número 134, 
 separados por coma, así:
@@ -30,9 +43,15 @@ separados por coma, así:
 '134,268,...'
 
 """
-
-
-
+NumeroBase = 134
+n = 1
+tabla100=""
+while n < 11:
+  if n==1:
+    tabla100=str(NumeroBase*n)
+  else:
+    tabla100 = tabla100 + "," + str(NumeroBase*n)
+  n += 1
 
 
 """Guardar en `multiplos3` la cantidad de números que son múltiplos de 3 y 
@@ -41,9 +60,11 @@ está ordenada).
 """
 lista1 = [12, 15, 20, 27, 32, 39, 42, 48, 55, 66, 75, 82, 89, 91, 93, 105, 123, 132, 150, 180, 201, 203, 231, 250, 260, 267, 300, 304, 310, 312, 321, 326]
 
-
-
-
+multiplos3=0
+for elemento in lista1:
+  if elemento < 300 and (elemento % 3) == 0:
+    multiplos3 += 1
+print(multiplos3)
 
 """Guardar en `regresivo50` una lista con la cuenta regresiva desde el número 
 50 hasta el 1, así:
@@ -60,28 +81,43 @@ lista1 = [12, 15, 20, 27, 32, 39, 42, 48, 55, 66, 75, 82, 89, 91, 93, 105, 123, 
 ]
 """
 
-
-
-
-
+regresivo50 = []
+n = 1
+VarAgregar = ""
+while n < 51:
+    if n==1:
+      VarAgregar = str(n)
+    else:
+      VarAgregar = str(n) + " " + VarAgregar
+    regresivo50.append(VarAgregar)
+    n += 1
+regresivo50.reverse()
 
 """Invierta la siguiente lista usando el bucle for y guarde el resultado en 
 `invertido` (sin hacer uso de la función `reversed` ni del método `reverse`)
 """
 lista2 = list(range(1, 70, 5))
 
-
-
-
+invertido = []
+for elemento in lista2:
+  invertido.insert(0, elemento)
 
 """Guardar en `primos` una lista con todos los números primos desde el 37 al 300
 Nota: Un número primo es un número entero que no se puede calcular multiplicando 
 otros números enteros.
 """
 
+primos=[]
+n=37
 
-
-
+while n < 301:
+  number=n
+  for i in range(2, number):
+      if (number % i) == 0:
+          break
+  else:
+      primos.append(n)
+  n+=1
 
 """Guardar en `fibonacci` una lista con los primeros 60 términos de la serie de 
 Fibonacci.
