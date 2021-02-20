@@ -64,7 +64,6 @@ multiplos3=0
 for elemento in lista1:
   if elemento < 300 and (elemento % 3) == 0:
     multiplos3 += 1
-print(multiplos3)
 
 """Guardar en `regresivo50` una lista con la cuenta regresiva desde el número 
 50 hasta el 1, así:
@@ -127,10 +126,13 @@ del segundo cada uno se calcula sumando los dos anteriores términos de la serie
 [0, 1, 1, 2, 3, 5, 8, ...]
 
 """
+fibonacci=[0,1]
+n=2
 
-
-
-
+while n < 60:
+  VarAgregar=int(fibonacci[n-1])+int(fibonacci[n-2])
+  fibonacci.append(VarAgregar)
+  n+=1
 
 """Guardar en `factorial` el factorial de 30
 El factorial (símbolo:!) Significa multiplicar todos los números enteros desde
@@ -141,8 +143,12 @@ Por ejemplo, el factorial de 5 se calcula así:
 5! = 5 × 4 × 3 × 2 × 1 = 120
 """
 
+n=1
+factorial=1
 
-
+while n < 31:
+  factorial=factorial*n
+  n+=1
 
 
 """Guarde en lista `pares` los elementos de la siguiente lista que esten 
@@ -151,26 +157,30 @@ presentes en posiciones pares, pero solo hasta la posición 80.
 
 lista3 = [941, 149, 672, 208, 99, 562, 749, 947, 251, 750, 889, 596, 836, 742, 512, 19, 674, 142, 272, 773, 859, 598, 898, 930, 119, 107, 798, 447, 348, 402, 33, 678, 460, 144, 168, 290, 929, 254, 233, 563, 48, 249, 890, 871, 484, 265, 831, 694, 366, 499, 271, 123, 870, 986, 449, 894, 347, 346, 519, 969, 242, 57, 985, 250, 490, 93, 999, 373, 355, 466, 416, 937, 214, 707, 834, 126, 698, 268, 217, 406, 334, 285, 429, 130, 393, 396, 936, 572, 688, 765, 404, 970, 159, 98, 545, 412, 629, 361, 70, 602]
 
-
-
-
-
+pares=[]
+for i, elemento in enumerate(lista3):
+  if i%2==0 and i<81:
+    pares.append(lista3[i])
 
 """Guarde en lista `cubos` el cubo (potencia elevada a la 3) de los números del 
 1 al 100. 
 """
+n=1
+cubos=[]
 
-
-
+while n<101:
+  cubos.append(n**3)
+  n+=1
 
 
 """Encuentre la suma de la serie 2 +22 + 222 + 2222 + .. hasta sumar 10 términos 
 y guardar resultado en variable `suma_2s` 
 """
-
-
-
-
+suma_2s=0
+NumBase="2"
+while len(NumBase) < 11:
+  suma_2s=suma_2s + int(NumBase)
+  NumBase= NumBase + "2"
 
 """Guardar en un string llamado `patron` el siguiente patrón llegando a una 
 cantidad máxima de asteriscos de 30. 
@@ -193,6 +203,22 @@ cantidad máxima de asteriscos de 30.
 *
 """
 
+StringBase="*"
+patron=""
+i=1
 
+while i < 31:
+  if i==1:
+    patron=StringBase + "\n"
+  else:
+    patron=patron + (StringBase*i) + "\n"
+  i+=1
 
+i=i-2
 
+while i>0:
+  if i==1:
+    patron=patron + (StringBase*i)
+  else:
+    patron=patron + (StringBase*i) + "\n"
+  i-=1
